@@ -1,0 +1,13 @@
+---
+applications:
+- name: idf-space-shuttle
+  memory: 512M
+  path: target/space-shuttle-demo-0.5.26.jar
+  services:
+    - idf-space-shuttle-db
+    - idf-space-shuttle-zookeeper
+    - idf-space-shuttle-scoring-engine
+    - idf-space-shuttle-gateway
+  env:
+    VERSION: 0.5.26
+    SPRING_PROFILES_ACTIVE: cloud,kafka

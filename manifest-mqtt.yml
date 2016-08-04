@@ -1,0 +1,12 @@
+---
+applications:
+- name: space-shuttle
+  memory: 512M
+  path: target/space-shuttle-demo-0.5.26.jar
+  services:
+    - space-shuttle-db
+    - space-shuttle-mqtt
+    - space-shuttle-scoring-engine
+  env:
+    VERSION: 0.5.26
+    SPRING_PROFILES_ACTIVE: cloud,mqtt
