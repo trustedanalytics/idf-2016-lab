@@ -1,0 +1,13 @@
+---
+applications:
+- name: space-shuttle
+  memory: 512M
+  path: target/space-shuttle-demo-${version}.jar
+  services:
+    - space-shuttle-db
+    - space-shuttle-zookeeper
+    - space-shuttle-scoring-engine
+    - space-shuttle-gateway
+  env:
+    VERSION: ${version}
+    SPRING_PROFILES_ACTIVE: cloud,kafka
